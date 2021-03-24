@@ -1,0 +1,44 @@
+### Create an order
+POST http://localhost:8088/orders
+Content-Type: application/json
+Authorization: Basic user1 user1
+
+### Adds a product to the order
+PUT http://localhost:8088/orders/8/product/4/quantity/3
+Content-Type: application/json
+Authorization: Basic user1 user1
+
+### Adds a product but fail, for wrong quantity
+PUT http://localhost:8088/orders/8/product/5/quantity/0
+Content-Type: application/json
+Authorization: Basic user1 user1
+
+### Adds a product to the order
+PUT http://localhost:8088/orders/8/product/5/quantity/2
+Content-Type: application/json
+Authorization: Basic user1 user1
+
+### Corrects a quantity
+PUT http://localhost:8088/orders/8/product/4/quantity/5
+Content-Type: application/json
+Authorization: Basic user1 user1
+
+### List the orders of the user
+GET http://localhost:8088/orders
+Content-Type: application/json
+Authorization: Basic user1 user1
+
+### List all the orders, as admin
+GET http://localhost:8088/orders
+Content-Type: application/json
+Authorization: Basic admin1 admin1
+
+### List an order of the user
+GET http://localhost:8088/orders/8
+Content-Type: application/json
+Authorization: Basic user1 user1
+
+### List an order, as admin
+GET http://localhost:8088/orders/8
+Content-Type: application/json
+Authorization: Basic admin1 admin1
